@@ -9,6 +9,7 @@ import (
 	"github.com/linkerd/linkerd2/pkg/healthcheck"
 	"github.com/linkerd/linkerd2/pkg/k8s"
 	api "github.com/linkerd/linkerd2/pkg/public"
+	vizPkg "github.com/linkerd/linkerd2/viz/pkg"
 	"github.com/pkg/browser"
 	"github.com/spf13/cobra"
 )
@@ -97,7 +98,7 @@ func NewCmdDashboard() *cobra.Command {
 				return err
 			}
 
-			vizNamespace, err := getVizNamespace(cmd.Context(), k8sAPI)
+			vizNamespace, err := vizPkg.GetVizNamespace(cmd.Context(), k8sAPI)
 			if err != nil {
 				return err
 			}

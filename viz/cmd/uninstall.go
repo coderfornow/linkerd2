@@ -7,6 +7,7 @@ import (
 
 	"github.com/linkerd/linkerd2/pkg/k8s"
 	"github.com/linkerd/linkerd2/pkg/k8s/resource"
+	vizPkg "github.com/linkerd/linkerd2/viz/pkg"
 	"github.com/spf13/cobra"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
@@ -34,7 +35,7 @@ func uninstallRunE(ctx context.Context) error {
 		return err
 	}
 
-	vizNamespace, err := getVizNamespace(ctx, k8sAPI)
+	vizNamespace, err := vizPkg.GetVizNamespace(ctx, k8sAPI)
 	if err != nil {
 		return err
 	}
