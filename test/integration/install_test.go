@@ -606,6 +606,7 @@ func TestUpgradeHelm(t *testing.T) {
 		"--set", "dashboard.image.tag=" + TestHelper.GetVersion(),
 		"--set", "grafana.image.tag=" + TestHelper.GetVersion(),
 		"--set", "tap.image.tag=" + TestHelper.GetVersion(),
+		"--set", "metricsAPI.image.tag=" + TestHelper.GetVersion(),
 		"--wait",
 	}
 	// Install Viz Extension Chart
