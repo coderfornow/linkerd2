@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -eu
+set -u
 
 while IFS= read -r line; do dirs+=("$line"); done <<< "$(go list -f \{\{.Dir\}\} ./...)"
 
